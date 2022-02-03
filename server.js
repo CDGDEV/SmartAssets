@@ -8,7 +8,7 @@ require('dotenv').config()
 
 var selfsigned = require('selfsigned');
 var attrs = [{ name: 'commonName', value: 'localhost' }];
-var pems = selfsigned.generate(attrs, { days: 365 });
+var pems = selfsigned.generate(attrs, { days: 365, keySize: 2048, });
 
 var options = {
     key: pems['private'],
